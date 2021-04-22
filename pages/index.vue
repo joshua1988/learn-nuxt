@@ -1,0 +1,75 @@
+<template>
+  <div>
+    <h1>메인 페이지</h1>
+    <main>
+      <div class="input-wrapper flex">
+        <input type="text" />
+        <button>search</button>
+      </div>
+      <ul>
+        <li
+          v-for="item in items"
+          :key="item.id"
+          class="item flex"
+          @click="routeToDetailPage(item.id)"
+        >
+          <img class="product-image" :src="item.imageUrl" alt="" />
+          <p>{{ item.name }}</p>
+          <span>{{ item.price }}</span>
+        </li>
+      </ul>
+    </main>
+  </div>
+</template>
+
+<script>
+import axios from 'axios'
+
+export default {
+  data() {
+    return {
+      items: [],
+    }
+  },
+
+  async created() {
+    const { data } = await axios.get('http://localhost:3000/products')
+    this.items = data.map((item) => ({
+      ...item,
+      imageUrl: `${item.imageUrl}?random=${Math.random()}`,
+    }))
+  },
+
+  methods: {
+    routeToDetailPage(id) {
+      this.$router.push(`/product/${id}`)
+    },
+  },
+}
+</script>
+
+<style scoped>
+@import '../assets/css/reset.css';
+
+/* utils */
+.input-wrapper {
+  height: 40px;
+  margin: 1rem 0;
+}
+.flex {
+  display: flex;
+  justify-content: center;
+}
+.item {
+  display: inline-block;
+  width: 400px;
+  height: 300px;
+  text-align: center;
+  margin: 0 0.5rem;
+  cursor: pointer;
+}
+.product-image {
+  width: 400px;
+  height: 250px;
+}
+</style>
