@@ -1,10 +1,10 @@
 <template>
   <div>
     <main>
-      <div class="input-wrapper flex">
-        <input type="text" />
-        <button>search</button>
-      </div>
+      <SearchInput
+        v-model="inputText"
+        @search="filterItemsBySearchText"
+      ></SearchInput>
       <ul>
         <li
           v-for="item in items"
@@ -23,8 +23,12 @@
 
 <script>
 import axios from 'axios'
+import SearchInput from '@/components/SearchInput.vue'
+// import { debounce } from 'lodash'
 
 export default {
+  components: { SearchInput },
+
   async asyncData() {
     try {
       const { data } = await axios.get('http://localhost:3000/products')
@@ -39,7 +43,24 @@ export default {
     }
   },
 
+  data() {
+    return {
+      inputText: '',
+    }
+  },
+
   methods: {
+    async filterItemsBySearchText() {
+      const { data } = await axios.get('http://localhost:3000/products', {
+        params: {
+          name_like: this.inputText,
+        },
+      })
+      this.items = data.map((item) => ({
+        ...item,
+        imageUrl: `${item.imageUrl}?random=${Math.random()}`,
+      }))
+    },
     routeToDetailPage(id) {
       this.$router.push(`/products/${id}`)
     },
