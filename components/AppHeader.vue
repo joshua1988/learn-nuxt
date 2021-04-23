@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="title">
     <nuxt-link to="/">Nuxt Shopping</nuxt-link>
   </header>
 </template>
