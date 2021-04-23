@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app">
     <main>
       <SearchInput
         v-model="inputText"
@@ -17,6 +17,9 @@
           <span>{{ item.price }}</span>
         </li>
       </ul>
+      <div class="cart-wrapper">
+        <button class="btn">장바구니 바로가기</button>
+      </div>
     </main>
   </div>
 </template>
@@ -84,5 +87,21 @@ export default {
 .product-image {
   width: 400px;
   height: 250px;
+}
+.app {
+  position: relative;
+}
+/* TODO: sticky 크로스 브라우징 확인 필요 (ie, safari 등) */
+.cart-wrapper {
+  position: sticky;
+  float: right;
+  bottom: 50px;
+  right: 50px;
+}
+.cart-wrapper .btn {
+  display: inline-block;
+  height: 40px;
+  font-size: 1rem;
+  font-weight: 500;
 }
 </style>
