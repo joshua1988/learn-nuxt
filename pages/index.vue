@@ -69,11 +69,6 @@ export default {
 </script>
 
 <style scoped>
-/* utils */
-.input-wrapper {
-  height: 40px;
-  margin: 1rem 0;
-}
 .flex {
   display: flex;
   justify-content: center;
