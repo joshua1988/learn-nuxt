@@ -49,8 +49,6 @@ export default {
 </script>
 
 <style scoped>
-@import '../assets/css/reset.css';
-
 /* utils */
 .input-wrapper {
   height: 40px;
