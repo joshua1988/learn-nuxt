@@ -26,23 +26,23 @@
 import axios from 'axios'
 
 export default {
-  data() {
-    return {
-      items: [],
+  async asyncData() {
+    try {
+      const { data } = await axios.get('http://localhost:3000/products')
+      const items = data.map((item) => ({
+        ...item,
+        imageUrl: `${item.imageUrl}?random=${Math.random()}`,
+      }))
+      return { items }
+    } catch (error) {
+      const items = []
+      return { items }
     }
-  },
-
-  async created() {
-    const { data } = await axios.get('http://localhost:3000/products')
-    this.items = data.map((item) => ({
-      ...item,
-      imageUrl: `${item.imageUrl}?random=${Math.random()}`,
-    }))
   },
 
   methods: {
     routeToDetailPage(id) {
-      this.$router.push(`/product/${id}`)
+      this.$router.push(`/products/${id}`)
     },
   },
 }
