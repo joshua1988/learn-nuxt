@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1>상세 페이지</h1>
     <div class="container">
       <div class="main-panel">
         <img
@@ -12,7 +11,7 @@
       <div class="side-panel">
         <p class="name">{{ product.name }}</p>
         <p class="price">{{ product.price }}</p>
-        <button>Add to Cart</button>
+        <button type="button" @click="addToCart">Add to Cart</button>
       </div>
     </div>
   </div>
@@ -23,11 +22,17 @@ import axios from 'axios'
 
 export default {
   async asyncData({ params }) {
-    console.log(params)
     const response = await axios.get(
       `http://localhost:3000/products/${params.id}`
     )
     return { product: response.data }
+  },
+
+  methods: {
+    addToCart() {
+      this.$store.commit('addItemToCart', this.product)
+      this.$router.push('/cart')
+    },
   },
 }
 </script>
