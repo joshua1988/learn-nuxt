@@ -16,6 +16,10 @@ export const mutations = {
 export const actions = {
   async fetchCarts(context) {
     const { data } = await axios.get('http://localhost:3000/carts')
-    context.commit('setCarts', data)
+    const items = data.map((item) => ({
+      ...item,
+      imageUrl: `${item.imageUrl}?random=${Math.random()}`,
+    }))
+    context.commit('setCarts', items)
   },
 }

@@ -187,6 +187,12 @@
       "name": "Intelligent Metal Mouse",
       "price": "84.00",
       "imageUrl": "http://placeimg.com/640/480/fashion"
+    },
+    {
+      "id": 7,
+      "name": "Awesome Concrete Shirt",
+      "price": "165.00",
+      "imageUrl": "http://placeimg.com/640/480/fashion"
     }
   ]
 }
