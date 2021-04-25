@@ -1,36 +1,21 @@
 # learn-nuxt
 
-## 할 일
+인프런의 Nuxt.js 시작하기 강의 리포지토리입니다.
 
-- [ ] 메인 페이지의 검색 박스, 리스트 아이템 컴포넌트화
-- [ ] 검색 박스에서 검색할 때 debounce 걸어주기
-- [ ] 메인, 상세 페이지의 헤더를 레이아웃 컴포넌트에서 선언해주기
+## 개발 환경 구성
 
-## 수업 과정 흐름 정리
+- [Chrome](https://www.google.com/intl/ko/chrome/)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Vue.js Dev Tools](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
+- [Node.js](https://nodejs.org/ko/)
 
-메인 페이지와 상세 페이지의 기능을 어느 정도 구현 후 설계한 교과과정 보고 프로젝트 생성부터 자잘한 기능들 어떤 순서로 가져갈지 정리해 보기
+## VSCode 플러그인 목록
 
-## 수업 순서
-
-- nuxt 프로젝트 생성 및 실행 확ㅇ인
-- 페이지 컴포넌트 제작
-  - 상세 페이지 컴포넌트 `detail.vue` 생성 후 `h1` 태그 정도로 페이지 이름 정도만 텍스트로 기입
-  - [ ] 잘못된 URL로 접근했을 때의 에러 페이지 접근 방법 및 스타일링 방법 안내
-- 레이아웃 개념 안내
-  - `default.vue` 레이아웃에서 공통 레이아웃 요소인 헤더 컴포넌트 등록 및 `NuxtLink`로 페이지 클릭 이동 방법 안내
-- 백엔드 API 안내
-  - `backend`에서 노드 모듈 설치 후 실행 방법 안내 후 서버 실행하여 `localhost:3000` API 확인
-- 스타일 시트 안내
-  - `assets/css`에 위치
-- 메인 페이지 제작
-  - 데이터 표시해서 화면에 뿌려주기
-    - `created` 로 먼저 화면에 뿌리기
-    - `asyncData` 로 화면에 뿌릴 수 있도록 리팩토링 - API 에러 나는 상황에 대한 fallback data 설정 및 방법 안내
-  - 검색 박스, 리스트 아이템 컴포넌트화
-- 상세 페이지 연결
-  - 메인 페이지의 상품 정보 클릭했을 때 상세 페이지로 연결되도록 넉스트의 다이나믹 페이지 라우팅 방법 안내
-- 상세 페이지 제작
-  - asyncData, fetch를 이용한 상세 페이지 정보 호출 
-- 카트 페이지 제작
-  - 카트 페이지 컴포넌트 직접 실습해 보라고 안내
-  - 메인과 상세에서 add to cart 했을 때 장바구니 상품 담기도록 `store` 사용해서 구현해보기
+- 색 테마 : [Night Owl](https://marketplace.visualstudio.com/items?itemName=sdras.night-owl)
+- 파일 아이콘 테마 : [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
+- 뷰 확장 플러그인 : [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur)
+- 뷰 코드 스니펫 : [Vue VSCode Snippets](https://marketplace.visualstudio.com/items?itemName=sdras.vue-vscode-snippets)
+- 문법 검사 : [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint), [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode), [ES6 String HTML](https://marketplace.visualstudio.com/items?itemName=Tobermory.es6-string-html)
+- 실습 환경 보조 : [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+- 기타
+  - [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager), [Auto Close Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag), [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens), [Atom Keymap](https://marketplace.visualstudio.com/items?itemName=ms-vscode.atom-keybindings), [Jetbrains IDE Keymap](https://marketplace.visualstudio.com/items?itemName=isudox.vscode-jetbrains-keybindings) 등
