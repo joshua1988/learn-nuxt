@@ -94,7 +94,6 @@ export default {
 .app {
   position: relative;
 }
-/* TODO: sticky 크로스 브라우징 확인 필요 (ie, safari 등) */
 .cart-wrapper {
   position: sticky;
   float: right;
