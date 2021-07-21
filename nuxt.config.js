@@ -38,9 +38,9 @@ export default {
   build: {},
 
   // server
-  server: {
-    port: 4000,
-  },
+  // server: {
+  //   port: 4000,
+  // },
 
   // env
   env: {
