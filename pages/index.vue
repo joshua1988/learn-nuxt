@@ -25,8 +25,9 @@
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
 import SearchInput from '@/components/SearchInput.vue'
+import { fetchProducts, fetchProductsByKeyword } from '@/api/index'
 // import { debounce } from 'lodash'
 
 export default {
@@ -34,7 +35,7 @@ export default {
 
   async asyncData() {
     try {
-      const { data } = await axios.get('http://localhost:3000/products')
+      const { data } = await fetchProducts()
       const items = data.map((item) => ({
         ...item,
         imageUrl: `${item.imageUrl}?random=${Math.random()}`,
@@ -54,11 +55,7 @@ export default {
 
   methods: {
     async filterItemsBySearchText() {
-      const { data } = await axios.get('http://localhost:3000/products', {
-        params: {
-          name_like: this.inputText,
-        },
-      })
+      const { data } = await fetchProductsByKeyword(this.inputText)
       this.items = data.map((item) => ({
         ...item,
         imageUrl: `${item.imageUrl}?random=${Math.random()}`,
