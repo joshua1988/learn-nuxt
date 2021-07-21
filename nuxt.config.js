@@ -41,7 +41,7 @@ export default {
 
   // server
   server: {
-    port: isProduction ? 8080 : 4000,
+    port: isProduction ? 4000 : null,
   },
 
   // env
