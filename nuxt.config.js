@@ -1,3 +1,5 @@
+const isProduction = process.env.NODE_ENV === 'production'
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   // target: 'static',
@@ -38,15 +40,14 @@ export default {
   build: {},
 
   // server
-  // server: {
-  //   port: 4000,
-  // },
+  server: {
+    port: isProduction ? 8080 : 4000,
+  },
 
   // env
   env: {
-    baseURL:
-      process.env.NODE_ENV === 'production'
-        ? 'https://my-json-server.typicode.com/joshua1988/nuxt-shopping-api'
-        : 'http://localhost:3000',
+    baseURL: isProduction
+      ? 'https://my-json-server.typicode.com/joshua1988/nuxt-shopping-api'
+      : 'http://localhost:3000',
   },
 }
