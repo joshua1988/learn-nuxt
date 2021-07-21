@@ -4,12 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "nuxt-build": "nuxt build",
+    "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
-    "lint": "npm run lint:js",
-    "build": "nuxt generate"
+    "lint": "npm run lint:js"
   },
   "dependencies": {
     "axios": "^0.21.1",
