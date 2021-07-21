@@ -28,7 +28,6 @@ export default {
 
   methods: {
     async addToCart() {
-      // await axios.post('http://localhost:3000/carts', this.product)
       await createCartItem(this.product)
       this.$store.commit('addItemToCart', this.product)
       this.$router.push('/cart')

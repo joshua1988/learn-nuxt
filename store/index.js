@@ -1,4 +1,4 @@
-import axios from 'axios'
+import { fetchCartItems } from '~/api'
 
 export const state = () => ({
   carts: [],
@@ -15,7 +15,7 @@ export const mutations = {
 
 export const actions = {
   async fetchCarts(context) {
-    const { data } = await axios.get('http://localhost:3000/carts')
+    const { data } = await fetchCartItems()
     const items = data.map((item) => ({
       ...item,
       imageUrl: `${item.imageUrl}?random=${Math.random()}`,
